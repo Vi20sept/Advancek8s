@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rate-limit-config
+  namespace: default
+data:
+  config.yaml: |
+    domain: nginx-gateway
+    descriptors:
+      - key: path
+        value: app
+        rate_limit:
+          unit: second
+          requests_per_unit: 2

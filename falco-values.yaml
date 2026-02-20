@@ -1,0 +1,41 @@
+falco:
+  log_level: debug
+
+driver:
+  kind: modern_ebpf
+
+rbac:
+  create: true
+
+falcoctl:
+  artifact:
+    install:
+      enabled: true
+      refs:
+        - falco-rules:5
+      resources:
+        limits:
+          cpu: 100m
+          memory: 128Mi
+        requests:
+          cpu: 50m
+          memory: 64Mi
+    follow:
+      enabled: true
+      refs:
+        - falco-rules:5
+      resources:
+        limits:
+          cpu: 100m
+          memory: 128Mi
+        requests:
+          cpu: 50m
+          memory: 64Mi
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 256Mi

@@ -1,0 +1,6 @@
+falco-talon
+falcosidekick
+k8s-metacollector
+event-generator
+falco
+falco-exporter
